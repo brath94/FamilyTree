@@ -6,10 +6,11 @@ class Female extends Person {
         super(name,Person.FEMALE);
     }
     giveBirth(name,gender){
-        if(!this.isMarried()) throw new Error("Person is not married yet!");
+        if(!this.isMarried()) return null;
         let child = null;
-        if(gender ===  Person.FEMALE ) child = new Female(name);
-         else child = new Male(name)
+        if(gender.toUpperCase() ===  Person.FEMALE.toUpperCase() ) child = new Female(name);
+        if(gender.toUpperCase() ===  Person.MALE.toUpperCase() ) child = new Male(name)
+        if(!child) return null
         child.setFather(this.partner);
         child.setMother(this);
         this.children.push(child)

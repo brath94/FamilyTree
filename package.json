@@ -2,11 +2,14 @@
   "name": "familytree",
   "version": "1.0.0",
   "description": "",
-  "main": "Family.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": " npm build && jest",
+    "build": "npm i",
+    "test-coverage": "npm run build && jest --coverage",
+    "start": "npm run build && node index.js"
   },
-  "author": "",
+  "author": "Bismita Rath",
   "license": "ISC",
   "devDependencies": {
     "jest": "^24.9.0"

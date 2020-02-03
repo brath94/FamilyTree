@@ -9,9 +9,10 @@ describe("Family Integration Test",()=>{
         male.marry(feMale);
         feMale.giveBirth("waa","male");
         const children = feMale. getChildren();
-        const family = new Family();
-        family.addMember(children);
-        const member =family.getMembers();
+        Family.addMember(null);
+        const member =Family.getMembers();
+        expect(member.length).toBe(0); 
+        Family.addMember(children);
         expect(member.length).not.toBe(0);  
     });
     test("Family Integration Test for find by name", ()=>{
@@ -19,9 +20,8 @@ describe("Family Integration Test",()=>{
         const feMale = new Female("bb");
         male.marry(feMale);
         const child = feMale.giveBirth("waa","male");
-        const family = new Family();
-        family.addMember(child);
-        const p = family.findMemberByName(child.name);
+        Family.addMember(child);
+        const p = Family.findMemberByName(child.name);
         expect(p).toBe(child);  
     })
       

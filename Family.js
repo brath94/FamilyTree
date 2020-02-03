@@ -5,7 +5,8 @@ class Family {
         this.members = []
     }
     addMember(person){
-        this.members.push(person);
+        if(person)
+          this.members.push(person);
     }
     findMemberByName(name){
         return this.members.find(member =>{
@@ -16,4 +17,4 @@ class Family {
         return this.members;
     }
 }
-module.exports = Family;
+module.exports = new Family();
